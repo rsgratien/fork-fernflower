@@ -1,5 +1,6 @@
 // Copyright 2000-2021 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 compileJava {
   sourceCompatibility '17'
@@ -23,4 +24,27 @@ jar {
   manifest {
     attributes 'Main-Class': 'org.jetbrains.java.decompiler.main.decompiler.ConsoleDecompiler'
   }
+}
+
+group = 'fernflower'
+version = '0.0.20230325'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'mavenLocal'
+            url = "file:///data/m2repo"
+        }
+    }
 }

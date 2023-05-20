@@ -44,12 +44,12 @@ public class StructTypePathEntry {
     NESTED(1),
 
     /**
-     *  Type path entry is a wildcard contained in e.g. <code>Map<@B ? extends String, String></code>
+     *  Type path entry is a wildcard contained in e.g. <code>Map&lt;@B ? extends String, String></code>
      */
     TYPE_WILDCARD(2),
 
     /**
-     * Type path entry is a type argument of a parameterized type contained in e.g. <code>List<@B Comparable<@F Object>></code>
+     * Type path entry is a type argument of a parameterized type contained in e.g. <code>List&lt;@B Comparable&lt;@F Object>></code>
      */
     TYPE(3);
 
